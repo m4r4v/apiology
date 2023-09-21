@@ -19,8 +19,8 @@ class Config {
     }
 
     public function createLog(string $_type, string $_message){
-        // log format => type, message and date-time
-        $log = '[' . strtoupper($_type) . '] Message: ' . $_message . ' >>> ' . date('Y-m-d H:i:s');
+        // log format => id, type, message and date-time
+        $log = '[' . hash('crc32', date('U')) . '][' . strtoupper($_type) . '] Message: ' . $_message . ' >>> ' . date('Y-m-d H:i:s');
         // create if it does not exist or open log file with write append mode
         $file = fopen($this->logFile, 'a+');
         // cannot open file
