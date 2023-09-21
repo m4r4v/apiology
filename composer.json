@@ -1,0 +1,23 @@
+{
+    "name": "apiology/api",
+    "description": "A simple PHP API Framework for everyone to use.",
+    "version": "0.0.1-dev",
+    "type": "library",
+    "homepage": "https://github.com/m4r4v/apiology",
+    "readme":"./README.md",
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "license": "LGPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Apiology\\Api\\": "api/"
+        }
+    },
+    "authors": [
+        {
+            "name": "m4r4v",
+            "homepage": "https://github.com/m4r4v"
+        }
+    ]
+}
