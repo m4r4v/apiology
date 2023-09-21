@@ -60,6 +60,7 @@ instruction from: [getcomposer.org](https://getcomposer.org/doc/00-intro.md)
 1. Remove installer: `php -r "unlink('composer-setup.php');"`
 
 check composer version
+
 ```bash
 composer --version
 Composer version 2.6.X YYYY-MM-DD HH:MM:SS
@@ -69,7 +70,6 @@ Composer version 2.6.X YYYY-MM-DD HH:MM:SS
 
 The following command will install all packages mentioned in the **composer.lock** if exists, if not, then it will pull information from **composer.json** for packages to be installed
 
-
 ```bash
 composer install
 ```
@@ -77,7 +77,9 @@ composer install
 Note: can also be done by using `composer update`
 
 &nbsp;
+
 ---
+
 &nbsp;
 
 ## API
