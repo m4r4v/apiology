@@ -19,5 +19,6 @@
             "name": "m4r4v",
             "homepage": "https://github.com/m4r4v"
         }
-    ]
+    ],
+    "optimize-autoloader": true
 }
