@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^([a-zA-z0-9-/]+)$ index.php?resource=$1 [QSA,L]
+
+
+ErrorDocument 500 "I messed up, get a coffee and come back later"
