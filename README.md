@@ -1,5 +1,7 @@
 # APIOLOGY - PHP API FRAMEWORK
 
+A simple PHP API Framework for everyone to use.
+
 author: m4r4v
 
 ## Setup Environment
