@@ -1,7 +1,7 @@
 {
     "name": "apiology/api",
     "description": "A simple PHP API Framework for everyone to use.",
-    "version": "0.0.1-dev",
+    "version": "0.1",
     "type": "library",
     "homepage": "https://github.com/m4r4v/apiology",
     "readme":"./README.md",

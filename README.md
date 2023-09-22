@@ -83,3 +83,148 @@ Note: can also be done by using `composer update`
 &nbsp;
 
 ## API
+
+The way to use the api just resides in a couple of files:
+
+1. settings.php
+1. custom classes
+
+### Settings
+
+Settings **Class** is inside the **Core** namespace (*Apiology\Api\Core*). by default it has some functions:
+
+#### smtpSettings()
+
+This function sets all data to send an email using **phpmailer** package and custom **SMTP**
+
+```php
+    public function smtpSettings():array{
+
+        // smtp array
+        $smtp = array(
+            'host'          => '',
+            'username'      => '',
+            'password'      => '',
+            'from-email'    => '',
+            'from-name'     => '',
+            'to-email'      => '',
+            'to-name'       => '',
+            'cc-email'      => '',
+            'cc-name'       => '',
+            'replyto-email' => '',
+            'replyto-name'  => '',
+            'subject'       => '',
+            'body'          => 'default'
+        );
+
+        return $smtp;
+    }
+```
+
+It returns and **array**
+
+#### allowedOriginDomains()
+
+This function sets the allowed domains from Origin request
+
+```php
+public function allowedOriginDomains():array{
+        $allowedDomains = array(
+            'localhost'
+        );
+
+        return $allowedDomains;
+    }
+```
+
+Can add as many domains as needed, useful to know who can have access and it increases security
+
+#### apiVersions()
+
+This function is useful to make the framework scalable. Add a version of the api and keep code separated between versions.
+
+Once added a new version, it can be set to true or false, meaning
+
+**true** => available
+
+**false** => not available (useful when you want to keep the code but also deprecate a specific version)
+
+```php
+    public function apiVersions(){
+        $versions = array(
+            'v1' => true,
+            'v2' => false
+        );
+
+        return $versions;
+    }
+```
+
+When creating a new version, it's a must to create a folder with the version number i.e.: v1 and inside of it recreate the **resources.php** `api/resources/v1/resources.php`
+
+```php
+<?php
+namespace Apiology\Api\Resources\V1;
+
+use Apiology\Api\Core\Config;
+use Apiology\Api\Core\Http;
+use Apiology\Api\Core\Email;
+use Apiology\Api\Core\Settings;
+
+class Resources {
+    private $config;
+    private $http;
+    private $settings;
+
+    // Instantiate config object
+    private function config(){
+        $this->config = new Config();
+    }
+
+    // Instantiate http object
+    private function http(){
+        $this->http = new Http();
+    }
+
+    // Instantiate settings object
+    private function settings(){
+        $this->settings = new Settings();
+    }
+
+    // Custom Method / Resource
+    public function sample(array $_resources){
+
+        self::config(); // call to Config
+        self::http(); // call to Http
+
+        if(count($_resources) > 0 && $_resources[0] == "send"){
+            self::send();
+            exit(0);
+        }
+
+        // send prompt response message
+        echo $this->config->jsonEncodeFormat($this->http->httpResponse(200, "Hello from resource sample"));
+
+    }
+
+}
+```
+
+Every main resource `http://domain.com/v1/[MAINRESOURCE]/[SUBRESOURCES]/[ANOTHERSUBRESOURCE]` will be a method inside this class
+
+#### httpAllowedMethods()
+
+This function handles an array with the HTTP Methods allowed to call any resource inside the API
+
+```php
+    public function httpAllowedMethods():array{
+        $allowedMethods = array(
+            'GET',
+            'POST',
+            'PUT',
+            'DELETE'
+        );
+
+        return $allowedMethods;
+    }
+```
