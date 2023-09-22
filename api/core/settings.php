@@ -10,13 +10,13 @@ class Settings {
 
         // smtp array
         $smtp = array(
-            'host'          => 'tiendadelcafe.cl',
-            'username'      => 'testing.api@tiendadelcafe.cl',
-            'password'      => 'KQyc52eV9Goj2',
-            'from-email'    => 'testing.api@tiendadelcafe.cl',
-            'from-name'     => 'Testing API',
-            'to-email'      => 'jmarquezrave@gmail.com',
-            'to-name'       => 'Jorge Marquez',
+            'host'          => '',
+            'username'      => '',
+            'password'      => '',
+            'from-email'    => '',
+            'from-name'     => '',
+            'to-email'      => '',
+            'to-name'       => '',
             'cc-email'      => '',
             'cc-name'       => '',
             'replyto-email' => '',
