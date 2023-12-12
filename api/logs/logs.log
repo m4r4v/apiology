@@ -1,1 +1,31 @@
 
+[83906098][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:28:37
+[3e431422][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:28:51
+[31b3dd00][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:28:58
+[416d9c0b][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:29:06
+[16d76b9d][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:36:57
+[f9296c2f][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:38:18
+[91ccae5d][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:38:23
+[47741ff0][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:38:40
+[f53999ea][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:38:46
+[f58e842b][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:38:52
+[23580e04][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:38:58
+[38ed8a18][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:39:03
+[846c53f2][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:40:22
+[84db4e33][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:40:36
+[2783c209][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:40:45
+[4318ce3c][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:40:49
+[226498d6][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:40:56
+[64bbbb21][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:41:39
+[b18d0de9][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:42:04
+[a02f1a08][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:42:25
+[a5c840d7][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:42:36
+[cb2ae49d][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:42:49
+[1d4b7373][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-11 18:42:57
+[3d24841d][NOTICE] Message: No Resource Set. Request IP: 172.17.0.1 >>> 2023-12-11 18:44:47
+[9e4eee9f][ERROR] Message: REQUEST_METHOD PATCH not allowed. Request IP: 172.17.0.1 >>> 2023-12-11 19:45:24
+[1d8b12e3][ERROR] Message: IP from: 172.17.0.1, PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email' in 'field list' >>> 2023-12-12 01:20:31
+[b41d2b67][ERROR] Message: IP from: 172.17.0.1, PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email' in 'field list' >>> 2023-12-12 01:21:05
+[9deb4891][ERROR] Message: IP from: 172.17.0.1, PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email' in 'field list' >>> 2023-12-12 01:23:31
+[f91e7f26][ERROR] Message: IP from: 172.17.0.1, PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email' in 'field list' >>> 2023-12-12 01:23:54
+[5f788f80][ERROR] Message: IP from: 172.17.0.1, PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email' in 'field list' >>> 2023-12-12 01:24:29
