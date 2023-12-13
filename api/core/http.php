@@ -11,7 +11,7 @@ class Http {
         $response = array(
             'status' => $_statusCode,
             'response' => $_response,
-            'data' => is_null($_data) || !$_data ? "A round of applause for the data that decided to play hide and seek, leaving us in delightful suspense" : $_data 
+            'message' => is_null($_data) || !$_data ? "A round of applause for the data that decided to play hide and seek, leaving us in delightful suspense" : $_data 
         );
 
         return $response;

@@ -5,6 +5,8 @@ namespace Apiology\Api;
 date_default_timezone_set('America/Santiago');
 // Require autload from composer
 require 'vendor/autoload.php';
+
+session_start();
 // use bootstrap
 use Apiology\Api\Bootstrap;
 // instantiate the Bootstrap Object

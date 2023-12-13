@@ -3,6 +3,9 @@ namespace Apiology\Api\Core;
 
 use DateTime;
 use DateTimeInterface;
+use Apiology\Api\Core\Core;
+use PDO;
+use PDOException;
 
 class Config {
 
@@ -36,6 +39,26 @@ class Config {
 
     public function getDateTime(string $_format){
         // $date = new 
+    }
+
+    public function dbConnect(){
+        $core = new Core();
+
+        $credentials = $core->settings()->databaseConnect();
+    
+        try {
+            $dbh = new PDO('mysql:host='.$credentials['host'].';dbname='.$credentials['database'].'', $credentials['user'], $credentials['pass']);
+
+            $return = $dbh;
+
+        } catch (PDOException $e) {
+            // attempt to retry piology\Api\Core\PDOException'the connection after some timeout for example
+            
+            $core->config()->createLog('ERROR', 'IP from: ' . $_SERVER['REMOTE_ADDR'] . ', PDOException: ' . $e->getMessage() );
+            $return = false;
+        }
+
+        return $return;
     }
 
 }

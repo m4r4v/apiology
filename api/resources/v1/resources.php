@@ -1,36 +1,69 @@
 <?php
 namespace Apiology\Api\Resources\V1;
 
-use Apiology\Api\Core\Config;
-use Apiology\Api\Core\Http;
+use Apiology\Api\Core\Core;
+use Apiology\Api\Resources\V1\Classes\Auth;
 use Apiology\Api\Core\Email;
-use Apiology\Api\Core\Settings;
 
 class Resources {
-    private $config;
-    private $http;
-    private $settings;
 
-    // Instantiate config object
-    private function config(){
-        $this->config = new Config();
-    }
+    private $login;
 
-    // Instantiate http object
-    private function http(){
-        $this->http = new Http();
-    }
+    public function app(array $_params){
 
-    // Instantiate settings object
-    private function settings(){
-        $this->settings = new Settings();
+        $core = new Core();
+        // $core->config(); // call to Config
+        // $core->http(); // call to Http
+        // $core->settings(); // call to Settings
+        $auth = new Auth();
+
+        switch ($_params[0]) {
+            case 'login':
+                # login
+                if($core->http()->httpHeaderMethods($core->settings()->httpAllowedMethods()) && $_SERVER['REQUEST_METHOD'] === 'POST'){
+
+                    $data = file_get_contents('php://input');
+                    $data = json_decode($data, true);
+
+                    $auth->login($data);
+                    
+                } else {
+                    echo $core->config()->jsonEncodeFormat($core->http()->httpResponse(400, "Bad Request"));
+                }
+                
+                break;
+            case 'recover':
+                # recover 
+                break;
+            case 'asistencia':
+                # asistencia 
+                break;
+            case 'pie':
+                # pie 
+                break;
+            case 'notas':
+                # notas
+                break;
+            case 'convivencia':
+                # convivencia
+                break;
+            case 'admin':
+                # convivencia
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+        
     }
 
     // Custom Method / Resource
     public function sample(array $_resources){
 
-        self::config(); // call to Config
-        self::http(); // call to Http
+        $core = new Core();
+        // $config = $core->config(); // call to Config
+        // $http = $core->http(); // call to Http
 
         if(count($_resources) > 0 && $_resources[0] == "send"){
             self::send();
@@ -38,22 +71,20 @@ class Resources {
         }
 
         // send prompt response message
-        echo $this->config->jsonEncodeFormat($this->http->httpResponse(200, "Hello from resource sample"));
+        echo $core->config()->jsonEncodeFormat($core->http()->httpResponse(200, "Hello from resource sample"));
 
     }
 
     private function send(){
 
-        self::config(); // call to Config
-        self::http(); // call to Http
-        self::settings(); // call to Settings
+        $core = new Core();
 
         $email = new Email();
-        $send = $email->sendEmail($this->settings->smtpSettings());
+        $send = $email->sendEmail($core->settings()->smtpSettings());
 
         if($send){
             // send prompt response message
-            echo $this->config->jsonEncodeFormat($this->http->httpResponse(202, "Your Message Was Sent"));
+            echo $core->config()->jsonEncodeFormat($core->http()->httpResponse(202, "Your Message Was Sent"));
         }
     }
 
