@@ -65,7 +65,7 @@ class Http {
             // create log
             $config->createLog('ERROR', 'Missing Origin Header. Request IP: ' . $_SERVER['REMOTE_ADDR'] );
             // send http response in json format
-            echo $config->jsonEncodeFormat(self::httpResponse(406, $_SERVER['HTTP_ORIGIN']));
+            echo $config->jsonEncodeFormat(self::httpResponse(406, "HTTP ORIGIN Failed"));
             // quit executing script
             exit(0);
         }
@@ -85,7 +85,7 @@ class Http {
             // create log
             $config->createLog('ERROR', 'Authorization is not set. Request IP: ' . $_SERVER['REMOTE_ADDR'] );
             // send http response in json format
-            echo $config->jsonEncodeFormat(self::httpResponse(401, "I'm afraid I can't let you in. You're not on the list."));
+            echo $config->jsonEncodeFormat(self::httpResponse(401, "Unauthorized Header"));
             // quit executing script
             exit(0);
         }
@@ -95,7 +95,7 @@ class Http {
             // create log
             $config->createLog('ERROR', 'Is not a Basic Authorization. Request IP: ' . $_SERVER['REMOTE_ADDR'] );
             // send http response in json format
-            echo $config->jsonEncodeFormat(self::httpResponse(401, "You're lost. Go back where you came from."));
+            echo $config->jsonEncodeFormat(self::httpResponse(401, "Basic Unauthorized"));
             // quit executing script
             exit(0);
         }
@@ -119,7 +119,7 @@ class Http {
             // create log
             $config->createLog('ERROR', 'Missing Api Key or is not set. Request IP: ' . $_SERVER['REMOTE_ADDR'] );
             // send http response in json format
-            echo $config->jsonEncodeFormat(self::httpResponse(406, "You're not the droid I'm looking for."));
+            echo $config->jsonEncodeFormat(self::httpResponse(406, "Missing Token"));
             // quit executing script
             exit(0);
         }

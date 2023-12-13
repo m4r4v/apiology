@@ -30,19 +30,19 @@ Class Bootstrap {
          * Origin + Authentication + Method + Version + Resource
          */
         // Check Origin HTTP Header
-        if($this->http->httpHeaderOrigin($this->settings->allowedOriginDomains())){
+        // if($this->http->httpHeaderOrigin($this->settings->allowedOriginDomains())){
             // Check API-KEY HTTP Header | Check for other authorizations available
-            if($this->http->httpHeaderApiKey()){
+            // if($this->http->httpHeaderApiKey()){
                 // check if the http request method is GET, POST, PUT or DELETE
-                if($this->http->httpHeaderMethods($this->settings->httpAllowedMethods())){
+                // if($this->http->httpHeaderMethods($this->settings->httpAllowedMethods())){
                     // set array from uri resources
                     $resources = explode('/', filter_var(trim($_SERVER['REQUEST_URI'], '/'), FILTER_SANITIZE_URL));
                     // call Object the serves as a Resource Handler
                     $this->resource->resourceHandler($resources);
                     
-                }
-            }
-        }
+                // }
+            // }
+        // }
     }
 
 }
