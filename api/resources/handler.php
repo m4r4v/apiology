@@ -33,7 +33,7 @@ class Handler {
         // check if the given param is empty
         if(empty($_version)){
             // prompt message
-            echo $this->config->jsonEncodeFormat($this->http->httpResponse(200, "A rare gem indeed, if you're collecting metaphysical voids."));
+            echo $this->config->jsonEncodeFormat($this->http->httpResponse(200, "Version OK"));
             // return false
             return false;
         }
@@ -81,7 +81,7 @@ class Handler {
             // create log
             $this->config->createLog('NOTICE', 'No Resource Set. Request IP: ' . $_SERVER['REMOTE_ADDR'] );
             // send http response in json format
-            echo $this->config->jsonEncodeFormat($this->http->httpResponse(400, "A moment of clarity amidst the haze: behold, the scenic route to absolutely nowhere."));
+            echo $this->config->jsonEncodeFormat($this->http->httpResponse(400, "Bad Resource Request"));
             // quit executing script
             exit(0);
             
@@ -100,7 +100,7 @@ class Handler {
             // create log
             $this->config->createLog('WARNING', 'No Resource Found: '.$resource.' - Request IP: ' . $_SERVER['REMOTE_ADDR'] );
             // send http response in json format
-            echo $this->config->jsonEncodeFormat($this->http->httpResponse(404, "In our extensive quest for resources, we've unearthed a veritable void a testament to our resourcefulness."));
+            echo $this->config->jsonEncodeFormat($this->http->httpResponse(404, "No Resource Found"));
             // quit executing script
             exit(0);
         }

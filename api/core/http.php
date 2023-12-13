@@ -65,7 +65,7 @@ class Http {
             // create log
             $config->createLog('ERROR', 'Missing Origin Header. Request IP: ' . $_SERVER['REMOTE_ADDR'] );
             // send http response in json format
-            echo $config->jsonEncodeFormat(self::httpResponse(406, "In the absence of authority, we bask in the glorious freedom of unverified wisdom"));
+            echo $config->jsonEncodeFormat(self::httpResponse(406, $_SERVER['HTTP_ORIGIN']));
             // quit executing script
             exit(0);
         }

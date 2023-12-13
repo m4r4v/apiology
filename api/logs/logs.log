@@ -64,3 +64,8 @@
 [f91e7f26][ERROR] Message: IP from: 172.17.0.1, PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email' in 'field list' >>> 2023-12-12 01:23:54
 [5f788f80][ERROR] Message: IP from: 172.17.0.1, PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email' in 'field list' >>> 2023-12-12 01:24:29
 >>>>>>> 4a9ebd31176d7a874c025a6e157d2e9fa40a2de3
+[135933f2][ERROR] Message: Missing Api Key or is not set. Request IP: 172.17.0.1 >>> 2023-12-13 11:56:01
+[c32127e7][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-13 11:58:39
+[6e4e215c][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-13 12:02:23
+[907c0a8d][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-13 12:03:04
+[9f3bde6e][ERROR] Message: Missing Origin Header. Request IP: 172.17.0.1 >>> 2023-12-13 12:03:19

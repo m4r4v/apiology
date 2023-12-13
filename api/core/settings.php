@@ -71,14 +71,4 @@ class Settings {
     /**
      * database Connection
      */
-    public function databaseConnect():array{
-        $credentials = array(
-            'host' => 'bytelab.cl',
-            'database' => 'ochobits_colegio',
-            'user' => 'ochobits_colegio',
-            'pass' => 'PNmw85uPP06Bo'
-        );
-
-        return $credentials;
-    }
 }
