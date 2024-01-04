@@ -41,24 +41,24 @@ class Config {
         // $date = new 
     }
 
-    public function dbConnect(){
-        $core = new Core();
+    // public function dbConnect(){
+    //     $core = new Core();
 
-        $credentials = $core->settings()->databaseConnect();
+    //     $credentials = $core->settings()->databaseConnect();
     
-        try {
-            $dbh = new PDO('mysql:host='.$credentials['host'].';dbname='.$credentials['database'].'', $credentials['user'], $credentials['pass']);
+    //     try {
+    //         $dbh = new PDO('mysql:host='.$credentials['host'].';dbname='.$credentials['database'].'', $credentials['user'], $credentials['pass']);
 
-            $return = $dbh;
+    //         $return = $dbh;
 
-        } catch (PDOException $e) {
-            // attempt to retry piology\Api\Core\PDOException'the connection after some timeout for example
+    //     } catch (PDOException $e) {
+    //         // attempt to retry piology\Api\Core\PDOException'the connection after some timeout for example
             
-            $core->config()->createLog('ERROR', 'IP from: ' . $_SERVER['REMOTE_ADDR'] . ', PDOException: ' . $e->getMessage() );
-            $return = false;
-        }
+    //         $core->config()->createLog('ERROR', 'IP from: ' . $_SERVER['REMOTE_ADDR'] . ', PDOException: ' . $e->getMessage() );
+    //         $return = false;
+    //     }
 
-        return $return;
-    }
+    //     return $return;
+    // }
 
 }
